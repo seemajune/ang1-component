@@ -39,7 +39,7 @@ componentApp.component('card', {
         assignment: "<" //one-way data binding, just read from parent
     },
     controller: function() {
-        function handleButtonClick(){
+        this.handleButtonClick = function(){
             console.log("clicked");
         }
     },
@@ -49,6 +49,6 @@ componentApp.component('card', {
     <div class="card__summary">
     <p>{{$ctrl.assignment.subtitle}}</p>
     </div>
-    <button class="btn btn__watch" ng-click="handleButtonClick()">watch</button>
+    <button class="btn btn__watch" ng-click="$ctrl.handleButtonClick()">watch</button>
     `
 });
